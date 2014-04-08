@@ -4,7 +4,7 @@ describe "StaticPages" do
   describe "Home page" do
     it "should have the content Sample App" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      visit  '/static_pages/home'
+      visit root_path
       page.should have_selector("h1", :text => 'Sample App')
     end
       it "should have a title" do
@@ -15,7 +15,7 @@ describe "StaticPages" do
     describe "Help page" do
     it "should have the content Help Page" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      visit  '/static_pages/help'
+      visit help_path
       page.should have_selector("h1", :text => 'Help Page')
     end
     it "should have a title" do
@@ -26,11 +26,22 @@ describe "StaticPages" do
   describe "About Us page" do
     it "should have the content About Us" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      visit  '/static_pages/about'
+      visit about_path
       page.should have_selector("h1", :text => 'About Us')
     end
     it "should have a title" do
       visit  '/static_pages/about'
+      page.should have_selector("title", :text => 'About Page')
+    end
+  end
+  describe "Contact page" do
+    it "should have the content About Us" do
+      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
+      visit contact_path
+      page.should have_selector("h1", :text => 'About Us')
+    end
+    it "should have a title" do
+      visit contact_path
       page.should have_selector("title", :text => 'About Page')
     end
   end
