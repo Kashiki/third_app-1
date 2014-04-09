@@ -30,19 +30,19 @@ describe "StaticPages" do
       page.should have_selector("h1", text: 'About Us')
     end
     it "should have a title" do
-      visit  '/static_pages/about'
+      visit  about_path
       page.should have_selector("title", text: 'About Page')
     end
   end
   describe "Contact page" do
-    it "should have the content About Us" do
+    it "should have the content Contact Us" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
       visit contact_path
-      page.should have_selector("h1", text: 'About Us')
+      page.should have_selector("h1", text: 'Contact Us')
     end
     it "should have a title" do
       visit contact_path
-      page.should have_selector("title", text: 'About Page')
+      page.should have_selector("title", text: 'Contact Page')
     end
   end
 end
